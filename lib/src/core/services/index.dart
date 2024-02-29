@@ -1,0 +1,38 @@
+library services ;
+
+import 'package:king_saud_hospital/src/core/api/api_consumer.dart';
+import 'package:king_saud_hospital/src/core/api/app_interceptors.dart';
+import 'package:king_saud_hospital/src/core/api/dio_consumer.dart';
+import 'package:king_saud_hospital/src/core/app_prefs/app_prefs.dart';
+import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
+import 'package:king_saud_hospital/src/feature/auth/data/datasource/remote_data_impl.dart';
+import 'package:king_saud_hospital/src/feature/auth/data/datasource/remote_data_source.dart';
+import 'package:king_saud_hospital/src/feature/auth/data/repository/auth_repository.dart';
+import 'package:king_saud_hospital/src/feature/auth/domain/repository/base_auth_repository.dart';
+import 'package:king_saud_hospital/src/feature/auth/domain/use_cases/login_useCase.dart';
+import 'package:king_saud_hospital/src/feature/auth/presentation/controller/auth_bloc.dart';
+import 'package:king_saud_hospital/src/feature/home/data/datasource/remote_data_impl.dart';
+import 'package:king_saud_hospital/src/feature/home/data/datasource/remote_data_source.dart';
+import 'package:king_saud_hospital/src/feature/home/data/repository/home_repository.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/repository/base_home_repository.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/add_to_favorite.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/check_QrCode.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/del_from_favorite.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/get_QrCode.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/get_agenda_useCase.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/get_favorites.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/get_home_programmes_useCase.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/get_speakers_useCase.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/pauseAccount.dart';
+import 'package:king_saud_hospital/src/feature/home/domain/use_cases/search_programmes.dart';
+import 'package:king_saud_hospital/src/feature/home/presentation/controller/QrCode/qrCode_bloc.dart';
+import 'package:king_saud_hospital/src/feature/home/presentation/controller/favorite/favorite_bloc.dart';
+import 'package:king_saud_hospital/src/feature/home/presentation/controller/profile/profile_bloc.dart';
+import 'package:king_saud_hospital/src/feature/home/presentation/controller/programmes/programmes_bloc.dart';
+import 'package:king_saud_hospital/src/feature/home/presentation/controller/search/search_bloc.dart';
+import 'package:king_saud_hospital/src/feature/home/presentation/controller/speakers_controller/speakers_bloc.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+part 'services_locator.dart';
